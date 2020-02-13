@@ -1,6 +1,21 @@
 <h1><%= @cocktail.name %></h1>
+
+<% if @cocktail.image.nil? %>
+  No image
+<% else %>
+ <%= image_tag @cocktail.image, class:"card-image" %>
+<% end %>
   <% @cocktail.doses.each do |dose| %>
-    <%= dose.description %> <%= dose.ingredient.name %>
+    <p>
+      <%= dose.description %>
+      <%= dose.ingredient.name %>
+      <%= link_to dose_path(dose), class: 'delete',
+        method: :delete,
+        data: { confirm: "Are you sure?" } do %>
+        <i class="far fa-trash-alt"></i>
+      <% end %>
+    </p>
   <% end %>
 
 <%= link_to 'Back', cocktails_path %>
+<%= link_to 'New ingredient', new_cocktail_dose_path(@cocktail) %>
