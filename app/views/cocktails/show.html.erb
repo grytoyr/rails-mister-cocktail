@@ -1,21 +1,44 @@
-<h1><%= @cocktail.name %></h1>
+<div class="show-wrap">
 
-<% if @cocktail.image.nil? %>
-  No image
-<% else %>
- <%= image_tag @cocktail.image, class:"card-image" %>
-<% end %>
-  <% @cocktail.doses.each do |dose| %>
-    <p>
-      <%= dose.description %>
-      <%= dose.ingredient.name %>
-      <%= link_to dose_path(dose), class: 'delete',
-        method: :delete,
-        data: { confirm: "Are you sure?" } do %>
-        <i class="far fa-trash-alt"></i>
-      <% end %>
-    </p>
-  <% end %>
 
-<%= link_to 'Back', cocktails_path %>
-<%= link_to 'New ingredient', new_cocktail_dose_path(@cocktail) %>
+ <%= cl_image_tag @cocktail.photo.key, class:"cocktail-picture" %>
+
+  <div class="show-content">
+
+    <div class="show-content-wrap">
+
+      <h1><%= @cocktail.name %> </h1>
+
+      <div class="show-dose-list">
+
+        <% @cocktail.doses.each do |dose| %>
+          <div class="ingredient-list">
+            <%= dose.description %>
+            <%= dose.ingredient.name %>
+            <%= link_to dose_path(dose), class: 'delete',
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        <% end %>
+
+      </div>
+
+      <div class="buttons-wrap">
+
+        <div class="button-icon">
+          <%= link_to cocktails_path do %>
+          <i class="fas fa-long-arrow-alt-left"></i>
+          <% end %>
+        </div>
+
+        <div class="button-icon">
+          <%= link_to new_cocktail_dose_path(@cocktail) do %>
+          <i class="fas fa-plus"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

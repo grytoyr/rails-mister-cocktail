@@ -1,0 +1,77 @@
+.show-wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+    h1 {
+    font-size: 80px;
+    margin-bottom: 50px;
+  }
+}
+
+.cocktail-picture {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.show-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-wrap {
+  display: flex;
+}
+
+.button-icon {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
+
+  i {
+    color: rgb(255, 146, 38);
+  }
+}
+
+.button-icon:hover {
+  background-color: rgb(255, 146, 38);
+
+  i {
+    color: white;
+  }
+}
+
+.show-dose-list {
+  margin-bottom: 70px;
+}
+
+.ingredient-list {
+  margin-bottom: 10px;
+  i {
+    color: rgb(255, 146, 38);
+    font-size: 15px;
+    margin-left: 10px;
+    opacity: 0;
+  }
+}
+
+.ingredient-list:hover {
+  i {
+    opacity: 1;
+  }
+   i:hover {
+    opacity: 1;
+    color: black;
+  }
+}

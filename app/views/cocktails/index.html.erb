@@ -1,6 +1,13 @@
-
-
 <div class="banner">
+
+  <div class="add-wrap">
+    <h4>Add cocktail</h4>
+    <div class="button-icon-front">
+      <%= link_to new_cocktail_path do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
 
   <div class="banner-title ">
     <h1>Create beautiful cocktails</h1>
@@ -22,16 +29,13 @@
             <% if cocktail.image.nil? %>
               No image
               <% else %>
-            <%= image_tag cocktail.image, class:"card-image" %>
+            <%= cl_image_tag cocktail.photo.key, class:"card-image" %>
             <% end %>
             <div class="card-content">
               <%= link_to cocktail.name, cocktail_path(cocktail) %>
             </div>
           </div>
         <% end %>
-
-        <p><%= link_to 'New Cocktail', new_cocktail_path %></p>
-
     </div>
   </div>
 </div>

@@ -43,3 +43,43 @@
   justify-content: center;
   align-items: top;
 }
+
+.add-wrap {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+
+  h4 {
+    color: white;
+    margin-bottom: 0;
+  }
+}
+
+.button-icon-front {
+  margin-left: 20px;
+  z-index: 5;
+  border: 1px solid white;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+  margin-right: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
+
+  i {
+    color: white;
+  }
+}
+
+.button-icon-front:hover {
+  background-color: white;
+
+  i {
+    color: rgb(255, 146, 38);
+  }
+}
