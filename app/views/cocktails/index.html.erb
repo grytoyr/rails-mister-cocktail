@@ -2,7 +2,7 @@
 
 <div class="banner">
 
-  <div class="banner-title">
+  <div class="banner-title ">
     <h1>Create beautiful cocktails</h1>
   </div>
 </div>
@@ -12,18 +12,20 @@
     <div class="card-grid">
         <% @cocktails.each do |cocktail| %>
           <div class="cards">
+            <div class="card-delete">
+              <%= link_to destroy_cocktail_path(cocktail), class: 'delete',
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do %>
+                  <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
             <% if cocktail.image.nil? %>
               No image
               <% else %>
             <%= image_tag cocktail.image, class:"card-image" %>
             <% end %>
             <div class="card-content">
-            <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
-            <%= link_to destroy_cocktail_path(cocktail), class: 'delete',
-                method: :delete,
-                data: { confirm: "Are you sure?" } do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
+              <%= link_to cocktail.name, cocktail_path(cocktail) %>
             </div>
           </div>
         <% end %>

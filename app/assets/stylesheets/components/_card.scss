@@ -9,6 +9,7 @@
 
 .cards {
   background-color: black;
+  position: relative;
 
   a {
     color: white;
@@ -28,4 +29,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 22px;
+  font-family: 'Canela Web';
+
+  i {
+    font-size: 15px;
+  }
+}
+
+.card-delete {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  top: -20px;
+  right: 10px;
+
+  i {
+    color: rgb(255, 146, 38);
+  }
 }
